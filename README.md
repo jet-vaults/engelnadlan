@@ -1,8 +1,8 @@
 # engelnadlan
 
 Speculative redesign of [engelnadlan.co.il](https://www.engelnadlan.co.il/) – a boutique
-urban-renewal (TAMA 38) developer working only in Tel Aviv. Static, Hebrew-first (RTL),
-dependency-free, built for Cloudflare Pages.
+urban-renewal (TAMA 38) developer working only in Tel Aviv. Static, Hebrew-first (RTL) with a
+full English mirror under `/en/`, dependency-free, built for Cloudflare Pages.
 
 ## Status
 
@@ -30,15 +30,17 @@ sureena.ns.cloudflare.com
 ## Layout
 
 ```
-tools/build.py            page generator – ALL copy, project data and page templates live here
+tools/build.py            page generator – ALL copy (he + en), project data and page templates live here
 tools/optimize_images.py  turns the original renderings into responsive AVIF + WebP variants
 wwwroot/                  the deployed site (only this folder is served)
   index.html              home
   projects/               listing + one folder per project (ussishkin-46, prague-3, ...)
   urban-renewal/          התחדשות עירונית + feasibility form (#feasibility)
-  about/  contact/  terms/  privacy/  404.html
+  about/  contact/  terms/  privacy/  accessibility/  404.html
+  en/                     English (LTR) mirror of every page; header has a language switch
   assets/css/site.css     hand-written stylesheet (self-hosted @font-face rules at the top)
   assets/js/site.js       ~3 KB: mobile menu, scroll reveal, project filter, form submit
+  assets/js/a11y.js       accessibility menu (mirrors + translates itself on /en/ pages)
   assets/fonts/           Frank Ruhl Libre 300/400 + Assistant 300/400/600, hebrew + latin subsets
   assets/img/             generated AVIF/WebP variants (do not edit by hand)
   _headers                Cloudflare Pages headers (noindex while in preview, immutable asset cache)
