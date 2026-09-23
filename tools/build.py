@@ -434,7 +434,7 @@ C = {
   ab_title="אודות", ab_desc="אנגל נדל״ן היא חברת בוטיק משפחתית לבנייה ולייזום, הפועלת רק בתל אביב ומנהלת פרויקטים של תמ״א 38 מראשיתם ועד השלמתם.",
   ab_eyebrow="אודות", ab_h="חברת בוטיק משפחתית שבונה מחדש את תל אביב.",
   ab_lead="אנגל נדל״ן עוסקת בבנייה ובייזום מזה שנים, ומורכבת מאנשי מקצוע איכותיים בתחומי הנדל״ן והבנייה: מהנדסים, אדריכלים, מנהלי פרויקטים, כלכלנים, עורכי דין ומנהלי שיווק.",
-  ab_img_alt="הדמיית ברדיצ׳בסקי 17 - בניין בוטיק פינתי בלב תל אביב", ab_img_cap="ברדיצ׳בסקי 17 · תמ״א 38/1 · אוכלס",
+  ab_img_alt="הדמיית קומת הגג באוסישקין 46 עם נוף לתל אביב", ab_img_cap="אוסישקין 46 · תמ״א 38/2 · בביצוע",
   ab1_eyebrow="מי אנחנו", ab1_statement='הניסיון המגוון של הצוות המוביל הוא <span class="em">יתרון איכותי</span> בענף - ואנחנו מביאים אותו לכל בניין.',
   ab1_ps=["חברתנו מנוסה בניהול כלל ההיבטים הכרוכים בכל פרויקט, מראשיתו ועד השלמתו: החל משלב התכנון ההנדסי, דרך שלבי המימון, המיסוי והליווי המשפטי, השיווק והמכירות - וכלה בניהול ובביצוע.","שיטת העבודה הייחודית שלנו מבטיחה מעקב צמוד על איכות הביצוע, קבלת אחריות מלאה על הנעשה בשטח והקפדה יתרה על עמידה בלוחות הזמנים ועל כל פרט ופרט. כך אנחנו מבצעים מגוון פרויקטים בסטנדרטים הגבוהים ביותר בעיר תל אביב.","אנגל נדל״ן פועלת רק בעיר תל אביב, ונבחרה כשותף אמין על ידי עשרות לקוחות מתל אביב למימוש פרויקטים בתחום התמ״א."],
   ab2_eyebrow="הערכים שלנו", ab2_h="מה שמנחה אותנו בכל פרויקט",
@@ -507,7 +507,7 @@ C = {
   ab_title="About", ab_desc="Engel Real Estate is a family-run boutique construction and development company that operates only in Tel Aviv and manages TAMA 38 projects from inception to completion.",
   ab_eyebrow="About", ab_h="A family-run boutique firm rebuilding Tel Aviv.",
   ab_lead="Engel Real Estate has been engaged in construction and development for years, and is made up of quality professionals in real estate and construction: engineers, architects, project managers, economists, lawyers and marketing managers.",
-  ab_img_alt="Rendering of Berdichevsky 17 - a corner boutique building in the heart of Tel Aviv", ab_img_cap="Berdichevsky 17 · TAMA 38/1 · completed",
+  ab_img_alt="Rendering of the Ussishkin 46 roof level overlooking Tel Aviv", ab_img_cap="Ussishkin 46 · TAMA 38/2 · under construction",
   ab1_eyebrow="Who we are", ab1_statement='The diverse experience of our leading team is a <span class="em">quality advantage</span> in the industry - and we bring it to every building.',
   ab1_ps=["Our company is experienced in managing all the aspects involved in each project, from inception to completion: from the engineering design stage, through financing, taxation and legal support, marketing and sales - to management and execution.","Our unique working method guarantees close supervision of construction quality, full responsibility for what happens on site and strict adherence to schedules and to every detail. That is how we deliver a variety of projects at the highest standards in the city of Tel Aviv.","Engel Real Estate operates only in the city of Tel Aviv, and has been chosen as a trusted partner by dozens of clients from Tel Aviv for TAMA 38 projects."],
   ab2_eyebrow="Our values", ab2_h="What guides us on every project",
@@ -846,7 +846,7 @@ def page_about(L):
     return head(L, c["ab_title"], c["ab_desc"], "/about/") + header(L, "/about/", "/about/") + f'''
 <section class="page-head"><div class="wrap"><p class="eyebrow">{c['ab_eyebrow']}</p><h1 class="h-xl">{c['ab_h']}</h1><p class="lead">{c['ab_lead']}</p></div></section>
 <section class="section--tight" style="padding-top:0">
-  <div class="wrap"><figure class="fig" style="aspect-ratio:21/9">{pic("berdichevsky-wide", c['ab_img_alt'], "(min-width:1320px) 1208px, 92vw", eager=True)}<figcaption>{c['ab_img_cap']}</figcaption></figure></div>
+  <div class="wrap"><figure class="fig" style="aspect-ratio:2/1">{pic("ussishkin-46-roof", c['ab_img_alt'], "(min-width:1320px) 1208px, 92vw", eager=True)}<figcaption>{c['ab_img_cap']}</figcaption></figure></div>
 </section>
 <section class="section">
   <div class="wrap">
