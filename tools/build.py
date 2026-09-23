@@ -167,10 +167,10 @@ def head(title, desc, path, extra=""):
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:image" content="{SITE_URL}/assets/img/hero-wide-1200.webp">
-<meta name="theme-color" content="#f4f1ea">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/frank-ruhl-libre-300-hebrew.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/assistant-300-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#f6f7f9">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preload" href="/assets/fonts/plex-hebrew-200-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/plex-hebrew-400-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 {extra}
 <link rel="stylesheet" href="/assets/css/site.css">
 <script>document.documentElement.classList.remove('no-js')</script>
@@ -184,7 +184,7 @@ def header(active):
     menu = "".join(f'<li><a href="{h}">{t}</a></li>' for h, t in NAV)
     return f'''<header class="header">
   <div class="wrap">
-    <a class="brand" href="/">{MARK}<span><span class="brand__name">{SITE_NAME}</span><span class="brand__sub">Tel Aviv · Urban Renewal</span></span></a>
+    <a class="brand" href="/"><img src="/assets/img/logo-black.png" width="453" height="324" alt="{SITE_NAME}"></a>
     <nav class="nav" aria-label="ניווט ראשי">{links}</nav>
     <div class="header__cta"><a class="header__phone" href="tel:{PHONE_TEL}">{PHONE}</a><a class="btn btn--solid" href="/urban-renewal/#feasibility">בדיקת היתכנות</a></div>
     <button class="burger" aria-label="תפריט" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
@@ -204,7 +204,7 @@ def footer():
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="/">{MARK}<span><span class="brand__name">{SITE_NAME}</span><span class="brand__sub">Tel Aviv · Urban Renewal</span></span></a>
+        <a class="brand" href="/"><img src="/assets/img/logo-white.png" width="453" height="324" alt="{SITE_NAME}" loading="lazy"></a>
         <p class="footer__tag">חברת בוטיק משפחתית לייזום וביצוע פרויקטים של תמ״א 38 – בתל אביב בלבד.</p>
       </div>
       <div><p class="footer__h">ניווט</p><ul>{nav}</ul></div>
@@ -760,6 +760,5 @@ if __name__ == "__main__":
     write("/terms/", page_terms())
     write("/privacy/", page_privacy())
     write("404.html", page_404())
-    write("favicon.svg", FAVICON)
     write("_headers", HEADERS if PREVIEW else HEADERS.replace("  X-Robots-Tag: noindex\n", ""))
     write("robots.txt", "User-agent: *\nDisallow: /\n" if PREVIEW else f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
