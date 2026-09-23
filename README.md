@@ -41,7 +41,7 @@ wwwroot/                  the deployed site (only this folder is served)
   assets/css/site.css     hand-written stylesheet (self-hosted @font-face rules at the top)
   assets/js/site.js       ~3 KB: mobile menu, scroll reveal, project filter, form submit
   assets/js/a11y.js       accessibility menu (mirrors + translates itself on /en/ pages)
-  assets/fonts/           Frank Ruhl Libre 300/400 + Assistant 300/400/600, hebrew + latin subsets
+  assets/fonts/           IBM Plex Sans Hebrew 200-600, hebrew + latin (ASCII) subsets
   assets/img/             generated AVIF/WebP variants (do not edit by hand)
   _headers                Cloudflare Pages headers (noindex while in preview, immutable asset cache)
   robots.txt              Disallow all while in preview
