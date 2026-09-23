@@ -1,0 +1,15 @@
+{
+  "url": "https://engelnadlan.co.il",
+  "pages_url": "https://engelnadlan.pages.dev",
+  "nameservers": [
+    "gordon.ns.cloudflare.com",
+    "sureena.ns.cloudflare.com"
+  ],
+  "storage": "https://jetvaults.blob.core.windows.net/engelnadlan/",
+  "private_storage": "https://jetvaults.blob.core.windows.net/engelnadlan-private/",
+  "storage_profile": "standard",
+  "storage_profile_label": "Standard",
+  "storage_account": "jetvaults",
+  "storage_account_url": "https://jetvaults.blob.core.windows.net",
+  "activated": false
+}
