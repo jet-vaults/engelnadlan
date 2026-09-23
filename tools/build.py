@@ -222,6 +222,7 @@ def footer():
     <div class="footer__bottom">
       <span>© {YEAR} כל הזכויות שמורות לאנגל נדל״ן</span>
       <span>התמונות והדמיות להמחשה בלבד. ט.ל.ח</span>
+      <span>זכויות העיצוב שמורות ל<a href="https://einstein-web.co.il" target="_blank" rel="noopener">איינשטיין אתרים</a></span>
     </div>
   </div>
 </footer>
