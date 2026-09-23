@@ -16,7 +16,7 @@ IMG = os.path.join(OUT, "assets", "img")
 
 # ---------------------------------------------------------------- settings
 SITE_URL = "https://engelnadlan.co.il"
-PREVIEW = True                      # preview build => noindex everywhere
+PREVIEW = False                     # True => noindex + robots Disallow (preview); False => indexable + canonical + sitemap
 WEB3FORMS_KEY = "YOUR-WEB3FORMS-ACCESS-KEY"   # replace to activate the contact forms
 PHONE = "03-6005955"
 PHONE_TEL = "+97236005955"
@@ -949,6 +949,12 @@ if __name__ == "__main__":
         write(L, "/terms/", page_terms(L))
         write(L, "/privacy/", page_privacy(L))
         write(L, "/accessibility/", page_accessibility(L))
+    urls = []
+    for L in ("he", "en"):
+        P = LANGS[L]["prefix"]
+        for path in ["/", "/projects/"] + [f"/projects/{p['slug']}/" for p in PROJECTS] + ["/urban-renewal/", "/about/", "/contact/", "/terms/", "/privacy/", "/accessibility/"]:
+            urls.append(f'<url><loc>{SITE_URL}{P}{path}</loc><xhtml:link rel="alternate" hreflang="he" href="{SITE_URL}{path}"/><xhtml:link rel="alternate" hreflang="en" href="{SITE_URL}/en{path}"/></url>')
+    write("he", "sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>'+"\n"+'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+"\n"+"\n".join(urls)+"\n</urlset>\n")
     write("he", "404.html", page_404("he"))
     write("he", "_headers", HEADERS if PREVIEW else HEADERS.replace("  X-Robots-Tag: noindex\n", ""))
     write("he", "robots.txt", "User-agent: *\nDisallow: /\n" if PREVIEW else f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
