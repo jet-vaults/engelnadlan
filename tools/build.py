@@ -768,15 +768,16 @@ def page_project(L, p, i):
     for g in p.get("extras", []):
         figs = "".join(f'<figure>{pic(name, cap[L], "(min-width:760px) 45vw, 92vw")}<figcaption>{cap[L]}</figcaption></figure>' for name, cap in g["imgs"])
         extras += f'<section class="section--tight"><div class="wrap"><p class="eyebrow">{g["title"][L]}</p><div class="gallery">{figs}</div></div></section>'
+    head_html = f'<div><p class="eyebrow">{p["area"][L]} · {t["tlv"]}</p><h1 class="h-xl">{p["title"][L]}</h1></div><span class="pill" data-s="{p["status"]}">{STATUS[L][p["status"]]}</span>'
+    if p["wide"]:
+        hero_block = f'<div class="proj-hero__media">{pic(hero_img, t["card_alt"].format(t=p["title"][L]), "(min-width:1320px) 1208px, 92vw", eager=True)}</div><div class="proj-hero__head">{head_html}</div>'
+    else:
+        hero_block = f'<div class="proj-hero__compact"><div class="proj-hero__thumb">{pic(hero_img, t["card_alt"].format(t=p["title"][L]), "(min-width:900px) 340px, 70vw", eager=True)}</div><div class="proj-hero__head proj-hero__head--compact">{head_html}</div></div>'
     return head(L, f"{p['title'][L]} - {p['type'][L]}", f"{p['title'][L]}, {p['area'][L]} {t['tlv']}. {p['short'][L]}", path, extra) + header(L, "/projects/", path) + f'''
 <section class="proj-hero">
   <div class="wrap">
     <nav class="crumbs" aria-label="{c['crumbs_label']}"><a href="{P}/">{t['crumbs_home']}</a><span>/</span><a href="{P}/projects/">{t['crumbs_projects']}</a><span>/</span><span>{p['title'][L]}</span></nav>
-    <div class="proj-hero__media">{pic(hero_img, t['card_alt'].format(t=p['title'][L]), "(min-width:1320px) 1208px, 92vw", eager=True)}</div>
-    <div class="proj-hero__head">
-      <div><p class="eyebrow">{p['area'][L]} · {t['tlv']}</p><h1 class="h-xl">{p['title'][L]}</h1></div>
-      <span class="pill" data-s="{p['status']}">{STATUS[L][p['status']]}</span>
-    </div>
+    {hero_block}
   </div>
 </section>
 <section class="section">
