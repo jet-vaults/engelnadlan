@@ -271,7 +271,7 @@ def header(L, active, path):
     phone_style = ' style="text-align:end"' if L == "he" else ""
     return f'''<header class="header">
   <div class="wrap">
-    <a class="brand" href="{P}/"><img src="/assets/img/logo-black.png" width="453" height="324" alt="{lg['site']}"></a>
+    <a class="brand" href="{P}/"><img src="/assets/img/logo-black.png" width="453" height="355" alt="{lg['site']}"></a>
     <nav class="nav" aria-label="{t['nav_label']}">{links}</nav>
     <div class="header__cta">{lang}<a class="header__phone" href="tel:{PHONE_TEL}">{PHONE}</a><a class="btn btn--solid" href="{P}/urban-renewal/#feasibility">{t['feas']}</a></div>
     <button class="burger" aria-label="{t['menu']}" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
@@ -293,7 +293,7 @@ def footer(L):
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="{P}/"><img src="/assets/img/logo-white.png" width="453" height="324" alt="{lg['site']}" loading="lazy"></a>
+        <a class="brand" href="{P}/"><img src="/assets/img/logo-white.png" width="453" height="355" alt="{lg['site']}" loading="lazy"></a>
         <p class="footer__tag">{t['tagline']}</p>
       </div>
       <div><p class="footer__h">{t['f_nav']}</p><ul>{nav}</ul></div>
