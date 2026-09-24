@@ -102,6 +102,12 @@ PROJECTS = [
        units=[dict(name=L2("מיני פנטהאוז","Mini penthouse"), sub=L2("דירת 4/5 חדרים · קומה 5","4/5-room apartment · 5th floor"),
                    rows=L2([("שטח עיקרי","126 מ״ר"),("מרפסת צפונית","24 מ״ר"),("כיווני אוויר","3"),("חזית","מלוא חזית הבניין לפארק ולים"),("תכנון","5 חדרים או 4 חדרים")],
                            [("Main area","126 sqm"),("North balcony","24 sqm"),("Exposures","3"),("Frontage","Full building frontage to the park and sea"),("Layout","5 rooms or 4 rooms")]))],
+       plans=[("ussishkin-46-plan-5r", L2("תכנון 5 חדרים","5-room layout")), ("ussishkin-46-plan-4r", L2("תכנון 4 חדרים","4-room layout"))],
+       plan_pdf="/assets/files/ussishkin-46-plan.pdf",
+       extras=[dict(title=L2("עיצוב הלובאים בסטנדרט גבוה","Lobby design at a high standard"),
+                    imgs=[("ussishkin-46-lobby-1", L2("קונספט עיצוב הלובי - אוסישקין 46","Lobby design concept - Ussishkin 46")),
+                          ("ussishkin-46-lobby-2", L2("לוח חומרים לעיצוב הלובי","Lobby materials board")),
+                          ("ussishkin-46-lobby-3", L2("פרטי גמר וחומרים ללובי","Lobby finishes and materials")) ])],
   ),
   dict(slug="prague-3", status="active", card="prague-3-card", wide="prague-3-wide",
        title=L2("פראג 3", "Prague 3"), area=L2("הצפון הישן", "The Old North"),
@@ -156,7 +162,9 @@ PROJECTS = [
        location=L2(["בין שדרות נורדאו לכיכר בזל","8 דקות הליכה לחוף מציצים","קרבה לצירי תנועה, מוסדות חינוך, בתי קפה ופארקים"],
                    ["Between Nordau Boulevard and Basel Square","8-minute walk to Metzitzim Beach","Close to main roads, schools, cafés and parks"]),
        gallery=[("bartenura-2", L2("הדמיית הבניין החדש","Rendering of the new building"), L2("הדמיה · חזית הבניין","Rendering · building façade"), "span")],
-       units=[],
+       units=[dict(name=L2("עובדיה מברטנורה 3","Ovadia MiBartenura 3"), sub=L2("דירות לשיווק","Apartments for marketing"), rows=L2([],[])),
+              dict(name=L2("עובדיה מברטנורה 5","Ovadia MiBartenura 5"), sub=L2("דירות לשיווק","Apartments for marketing"), rows=L2([],[]))],
+       units_note=L2("פרטי הדירות והמפרט יימסרו בפנייה למשרד.","Apartment details and specification are available on request."),
   ),
   dict(slug="berdichevsky-17", status="done", card="berdichevsky-card", wide="berdichevsky-wide",
        title=L2("ברדיצ׳בסקי 17", "Berdichevsky 17"), area=L2("לב העיר", "City Center"),
@@ -413,7 +421,7 @@ C = {
   filters=[("all","הכול"),("active","בביצוע"),("permit","היתר בנייה"),("planning","בתכנון"),("done","אוכלס")], filter_label="סינון לפי סטטוס",
   pl_empty="אין פרויקטים בסטטוס הזה כרגע.", pl_note="ועוד פרויקטים נבחרים בתל אביב. ההדמיות להמחשה בלבד. ט.ל.ח.",
   pp_about="על הפרויקט", pp_loc="מיקום", pp_specs="פרטי הפרויקט", pp_more="לפרטים נוספים", pp_gallery="גלריה", pp_gallery_note="ההדמיות להמחשה בלבד. ט.ל.ח.",
-  pp_units_eyebrow="דירות למכירה", pp_units_h="ישירות מהחברה, ללא עמלת תיווך", pp_units_more="לתיאום פגישה", pp_prev="הפרויקט הקודם", pp_next="הפרויקט הבא", pp_nav_label="ניווט בין פרויקטים", crumbs_label="פירורי לחם",
+  pp_units_eyebrow="דירות למכירה", pp_units_h="ישירות מהחברה, ללא עמלת תיווך", pp_units_more="לתיאום פגישה", pp_plans="תכניות הדירה", pp_plan_pdf="להורדת התכנית (PDF)", pp_prev="הפרויקט הקודם", pp_next="הפרויקט הבא", pp_nav_label="ניווט בין פרויקטים", crumbs_label="פירורי לחם",
   ur_title="התחדשות עירונית · תמ״א 38 בתל אביב", ur_desc="איך עובד פרויקט תמ״א 38 עם אנגל נדל״ן: הריסה ובנייה מחדש (38/2) או חיזוק ושיפוץ (38/1), ליווי הדיירים, צוות היועצים ובדיקת היתכנות ללא עלות.",
   ur_eyebrow="התחדשות עירונית", ur_h="הבניין שלכם יכול להיות הבניין הבא של תל אביב.",
   ur_lead="אנגל נדל״ן מתמחה בייזום ובמימוש פרויקטים של תמ״א 38 בתל אביב - החל מהבדיקה הראשונית של עמידה בתנאי התוכנית, דרך הבדיקות המשפטיות ברשויות והתכנון על כל היבטיו, וכלה בייזום, במימון ובביצוע.",
@@ -486,7 +494,7 @@ C = {
   filters=[("all","All"),("active","Under construction"),("permit","Building permit"),("planning","Planning"),("done","Completed")], filter_label="Filter by status",
   pl_empty="No projects with this status at the moment.", pl_note="And more selected projects in Tel Aviv. Renderings are for illustration only. E&OE.",
   pp_about="About the project", pp_loc="Location", pp_specs="Project details", pp_more="More details", pp_gallery="Gallery", pp_gallery_note="Renderings are for illustration only. E&OE.",
-  pp_units_eyebrow="Apartments for sale", pp_units_h="Directly from the developer, no brokerage fee", pp_units_more="Arrange a meeting", pp_prev="Previous project", pp_next="Next project", pp_nav_label="Project navigation", crumbs_label="Breadcrumb",
+  pp_units_eyebrow="Apartments for sale", pp_units_h="Directly from the developer, no brokerage fee", pp_units_more="Arrange a meeting", pp_plans="Floor plans", pp_plan_pdf="Download the plan (PDF)", pp_prev="Previous project", pp_next="Next project", pp_nav_label="Project navigation", crumbs_label="Breadcrumb",
   ur_title="Urban Renewal · TAMA 38 in Tel Aviv", ur_desc="How a TAMA 38 project works with Engel Real Estate: demolition and rebuild (38/2) or strengthening and renovation (38/1), resident support, the consultant team and a free feasibility check.",
   ur_eyebrow="Urban renewal", ur_h="Your building could be Tel Aviv's next building.",
   ur_lead="Engel Real Estate specialises in initiating and delivering TAMA 38 projects in Tel Aviv - from the initial check that the building meets the plan's conditions, through legal checks with the authorities and planning in all its aspects, to development, financing and construction.",
@@ -740,11 +748,26 @@ def page_project(L, p, i):
         gallery = f'<section class="section--tight"><div class="wrap"><p class="eyebrow">{c["pp_gallery"]}</p><div class="gallery">{figs}</div><p class="note" style="margin-top:14px">{c["pp_gallery_note"]}</p></div></section>'
     units = ""
     if p["units"]:
-        us = "".join(f'<div class="unit rv"><h3>{u["name"][L]}</h3><p class="sub">{u["sub"][L]}</p><ul>{"".join(f"<li><span>{k}</span><span>{v}</span></li>" for k, v in u["rows"][L])}</ul></div>' for u in p["units"])
+        note = p.get("units_note")
+        def unit_html(u):
+            rows = u["rows"][L]
+            body = f'<ul>{"".join(f"<li><span>{k}</span><span>{v}</span></li>" for k, v in rows)}</ul>' if rows else f'<p class="unit__note">{note[L] if note else ""}</p>'
+            return f'<div class="unit rv"><h3>{u["name"][L]}</h3><p class="sub">{u["sub"][L]}</p>{body}</div>'
+        us = "".join(unit_html(u) for u in p["units"])
+        plans = ""
+        if p.get("plans"):
+            figs = "".join(f'<figure class="plan">{pic(name, cap[L], "(min-width:760px) 45vw, 92vw")}<figcaption>{cap[L]}</figcaption></figure>' for name, cap in p["plans"])
+            pdf = f'<a class="btn btn--ghost" href="{p["plan_pdf"]}" download>{c["pp_plan_pdf"]} {ARROW}</a>' if p.get("plan_pdf") else ""
+            plans = f'<div class="plans"><p class="eyebrow" style="margin-top:44px">{c["pp_plans"]}</p><div class="gallery gallery--plans">{figs}</div><div class="actions" style="margin-top:22px">{pdf}</div></div>'
         units = f'''<section class="section section--stone"><div class="wrap">
   <div class="section-head"><div class="rv"><p class="eyebrow">{c['pp_units_eyebrow']}</p><h2 class="h-l">{c['pp_units_h']}</h2></div><a class="link more rv" href="{P}/contact/?project={p['slug']}">{c['pp_units_more']} {ARROW}</a></div>
   <div class="units">{us}</div>
+  {plans}
 </div></section>'''
+    extras = ""
+    for g in p.get("extras", []):
+        figs = "".join(f'<figure>{pic(name, cap[L], "(min-width:760px) 45vw, 92vw")}<figcaption>{cap[L]}</figcaption></figure>' for name, cap in g["imgs"])
+        extras += f'<section class="section--tight"><div class="wrap"><p class="eyebrow">{g["title"][L]}</p><div class="gallery">{figs}</div></div></section>'
     return head(L, f"{p['title'][L]} - {p['type'][L]}", f"{p['title'][L]}, {p['area'][L]} {t['tlv']}. {p['short'][L]}", path, extra) + header(L, "/projects/", path) + f'''
 <section class="proj-hero">
   <div class="wrap">
@@ -775,6 +798,7 @@ def page_project(L, p, i):
   </div>
 </section>
 {gallery}
+{extras}
 {units}
 <section class="section--tight"><div class="wrap">
   <nav class="proj-nav" aria-label="{c['pp_nav_label']}">

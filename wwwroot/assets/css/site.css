@@ -370,3 +370,9 @@ body.menu-open{overflow:hidden}
 /* ---------- rounded imagery ---------- */
 .card__media,.proj-hero__media,.gallery figure,.fig,.hero__media picture,.hero__media img{border-radius:5px;overflow:hidden}
 .hero__cap{border-start-start-radius:5px}
+
+/* ---------- floor plans & unit notes ---------- */
+.unit__note{margin:0;color:var(--ink-2);font-size:.95rem;border-top:1px solid var(--line);padding-top:12px}
+.gallery--plans figure{background:#fff;border:1px solid var(--line);padding:14px}
+.gallery--plans img{object-fit:contain;transition:none}
+.gallery--plans figure:hover img{transform:none}
